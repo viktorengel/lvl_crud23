@@ -4,7 +4,7 @@
 
     <div class="container py-5 text-center">
       <h1>Hola mundo</h1>
-      <a href="">Clientes</a>
+      <a href="{{ route('client.index') }}" class="btn btn-primary">Clientes</a>
     </div>
 
 @endsection
