@@ -6,6 +6,12 @@
       <h1>Listado de clientes</h1>
       <a href="{{ route('client.create') }}" class="btn btn-primary">Crear clientes</a>
       
+      @if (Session::has('mensaje'))
+          <div class="alert alert-info my-5">
+            {{ Session::get('mensaje') }}
+          </div>
+      @endif
+
       <div class="table-responsive">
         <table class="table table-primary">
           <thead>
