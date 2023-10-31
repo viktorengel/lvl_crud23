@@ -20,7 +20,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view("client.store");
+        return view("client.form");
     }
 
     /**
