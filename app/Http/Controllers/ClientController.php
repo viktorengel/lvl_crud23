@@ -36,7 +36,7 @@ class ClientController extends Controller
             'due'=> 'required|gte:1'
         ]);
 
-        $client = Client::created($request->only('name','due','comments'));
+        $client = Client::create($request->only('name','due','comments'));
 
         Session::flash('mensaje', 'Registro creado con exito');
 

@@ -18,6 +18,7 @@
             <tr>
               <th scope="col">Nombre</th>
               <th scope="col">Saldo</th>
+              <th scope="col">Comentario</th>
               <th scope="col">Acción</th>
             </tr>
           </thead>
@@ -26,6 +27,7 @@
               <tr class="">
                 <td scope="row">{{ $detail->name }}</td>
                 <td>{{ $detail->due }}</td>
+                <td>{{ $detail->comments }}</td>
                 <td>Editar - Eliminar</td>
               </tr>
             @empty
