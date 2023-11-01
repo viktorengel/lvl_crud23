@@ -22,16 +22,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="">
-              <td scope="row">EcuaFix</td>
-              <td>17.25</td>
-              <td>Editar - Eliminar</td>
-            </tr>
-            <tr class="">
-              <td scope="row">EcuaSys</td>
-              <td>22.45</td>
-              <td>Editar - Eliminar</td>
-            </tr>
+            @forelse ($clients as $detail)
+              <tr class="">
+                <td scope="row">{{ $detail->name }}</td>
+                <td>{{ $detail->due }}</td>
+                <td>Editar - Eliminar</td>
+              </tr>
+            @empty
+                
+            @endforelse
+
           </tbody>
         </table>
       </div>

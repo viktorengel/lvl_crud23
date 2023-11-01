@@ -8,7 +8,7 @@
         <form action="{{ route('client.store') }}" method="post">
             @csrf
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
+                <label for="name" class="form-label">Nombre</label>
                 <input type="text" name="name" class="form-control" placeholder="Nombre del cliente">
                 <p class="form-text">Escriba el nombre del cliente</p>
                 @error('name')
@@ -26,10 +26,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="comment" class="form-label">Comentario</label>
+                <label for="comments" class="form-label">Comentarios</label>
                 <textarea name="comments" class="form-control" cols="30" rows="4" ></textarea>
                 <p class="form-text">Escriba algun comentario</p>
-                @error('comment')
+                @error('comments')
                     <p class="form-text text-danger">{{ $message }}</p>
                 @enderror
             </div>
