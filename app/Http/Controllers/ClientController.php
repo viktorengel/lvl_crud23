@@ -38,7 +38,7 @@ class ClientController extends Controller
 
         $client = Client::create($request->only('name','due','comments'));
 
-        Session::flash('mensaje', 'Registro creado con exito');
+        Session::flash('mensaje', 'Registro creado con exito!');
 
         return redirect()->route('client.index');
         

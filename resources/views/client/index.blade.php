@@ -31,11 +31,16 @@
                 <td>Editar - Eliminar</td>
               </tr>
             @empty
-                
+                <tr>
+                  <td colspan="3">No hay registros</td>
+                </tr>
             @endforelse
 
           </tbody>
         </table>
+        @if ($clients->count())
+          {{ $clients->links() }}  
+        @endif
       </div>
       
     </div>
