@@ -32,8 +32,9 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=> 'required|max:15',
-            'due'=> 'required|gte:1'
+            'name'=> 'required|max:25',
+            'due'=> 'required|gte:1',
+            'comments'=> 'required'
         ]);
 
         $client = Client::create($request->only('name','due','comments'));
@@ -57,7 +58,8 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return view("client.form")
+                ->with('client', $client);
     }
 
     /**
@@ -65,7 +67,20 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+        $request->validate([
+            'name'=> 'required|max:25',
+            'due'=> 'required|gte:1',
+            'comments'=> 'required'
+        ]);
+
+        $client ->name = $request['name'];
+        $client ->due = $request['due'];
+        $client ->comments = $request['comments'];
+        $client ->save();
+
+        Session::flash('mensaje', 'Registro editado con exito!');
+
+        return redirect()->route('client.index');
     }
 
     /**

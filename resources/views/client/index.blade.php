@@ -28,7 +28,10 @@
                 <td scope="row">{{ $detail->name }}</td>
                 <td>{{ $detail->due }}</td>
                 <td>{{ $detail->comments }}</td>
-                <td>Editar - Eliminar</td>
+                <td>
+                  <a href="{{ route('client.edit', $detail) }}" class="btn btn-warning">Editar</a>
+                   - Eliminar
+                </td>
               </tr>
             @empty
                 <tr>
