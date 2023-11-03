@@ -6,5 +6,4 @@
       <h1>Listado de clientes</h1>
       <a href="{{ route('client.index') }}" class="btn btn-primary">Clientes</a>
     </div>
-
 @endsection
