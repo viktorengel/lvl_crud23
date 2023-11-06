@@ -12,7 +12,7 @@
           </div>
       @endif
 
-      <div class="table-responsive">
+      <div class="table-responsive  py-5">
         <table class="table table-primary">
           <thead>
             <tr>

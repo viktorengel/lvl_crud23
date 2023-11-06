@@ -17,7 +17,7 @@
             <form action="{{ route('client.store') }}" method="post">
         @endif
             @csrf
-            <div class="mb-3">
+            <div class="mb-3 py-5">
                 <label for="name" class="form-label">Nombre</label>
                 <input type="text" name="name" class="form-control" placeholder="Nombre del cliente" value="{{ old('name') ?? @$client->name }}">
                 <p class="form-text">Escriba el nombre del cliente</p>
@@ -45,11 +45,14 @@
             </div>
 
             @if (isset($client))
+                <a href="{{ route('client.index') }}" class="btn btn-danger">Listado clientes</a>
                 <button type="submit" class="btn btn-primary">Editar cliente</button>
             @else
+                <a href="{{ route('client.index') }}" class="btn btn-danger">Listado clientes</a>
                 <button type="submit" class="btn btn-primary">Guardar cliente</button>
             @endif
 
         </form>
+        
     </div>
 @endsection
